@@ -9,4 +9,8 @@
         android:id="@+id/action_clear"
         android:title="@string/action_clear"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_exit"
+        android:title="@string/action_exit"
+        app:showAsAction="never" />
 </menu>

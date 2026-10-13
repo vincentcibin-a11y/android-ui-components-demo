@@ -3,6 +3,7 @@
     <string name="app_title">Menu App</string>
     <string name="action_save">Save Preference</string>
     <string name="action_clear">Clear Preference</string>
+    <string name="action_exit">Exit App</string>
     <string name="img_icon_desc">Application Icon</string>
     <string name="label_spinner">Select Item (Spinner):</string>
     <string name="label_listview">List Items (ListView):</string>
@@ -11,4 +12,5 @@
     <string name="msg_saved">Saved: %1$s</string>
     <string name="msg_cleared">Preferences Cleared!</string>
     <string name="msg_clicked">Clicked: %1$s</string>
+    <string name="msg_exiting">Exiting application&#8230;</string>
 </resources>

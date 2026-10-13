@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         Spinner spinner = findViewById(R.id.spinner);
         ListView listView = findViewById(R.id.listView);
         ImageView imageView = findViewById(R.id.imageView);
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setImageResource(R.mipmap.ic_launcher);
         sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         loadSavedPreference();
+
         String[] spinnerItems = {"Option 1", "Option 2", "Option 3"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_spinner_dropdown_item, spinnerItems);
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
+
         String[] listItems = {"Item A", "Item B", "Item C", "Item D"};
         ArrayAdapter<String> listAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, listItems);
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -81,9 +86,14 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_clear) {
             clearPreference();
             return true;
+        } else if (id == R.id.action_exit) {
+            Toast.makeText(this, getString(R.string.msg_exiting), Toast.LENGTH_SHORT).show();
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
     private void savePreference(String value) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_SAVED_CHOICE, value);
